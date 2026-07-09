@@ -5,8 +5,8 @@ Developed by Solomon Mensah
 
 ### Exploratory Data Analysis
 We analyzed sensor degradation patterns to ensure only meaningful features were fed into our machine learning model.
-(image1.png)
-![Sensor Correlation with RUL](images/sensor_correlation.png)
+![Aerospace Command Center](Image1.png)
+![Distribution of Engine Lifespan](image2.png)
 
 An End-to-End Enterprise Solution leveraging Machine Learning, Cloud Data Warehousing, and Executive Business Intelligence.
 .
