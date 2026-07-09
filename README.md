@@ -54,7 +54,7 @@ This project introduces a predictive maintenance framework that enables organiza
 
 # 🏗️ Solution Architecture
 
-```text
+text
 NASA CMAPSS Dataset
           │
           ▼
@@ -75,7 +75,7 @@ Snowflake Data Warehouse
           │
           ▼
 Power BI Command Center
-```
+
 
 ---
 
