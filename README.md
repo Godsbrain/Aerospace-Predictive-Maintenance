@@ -1,77 +1,454 @@
-# Aerospace-Predictive-Maintenance
-End-to-End Aerospace Predictive Maintenance and Supply Chain Optimization Platform using Snowflake, Python, Machine Learning and Power BI.
-Aerospace Predictive Maintenance & Supply Chain Optimizer
-Developed by Solomon Mensah
+# ✈️ Aerospace Predictive Maintenance & Supply Chain Optimizer
 
-### Exploratory Data Analysis
-We analyzed sensor degradation patterns to ensure only meaningful features were fed into our machine learning model.
-![Aerospace Command Center](Image1.png)
+### End-to-End Predictive Maintenance, Failure Forecasting, and Supply Chain Optimization Platform
+
+**Developed by Solomon Mensah**
+
+---
+
+## 📌 Project Overview
+
+Unexpected aircraft engine failures can lead to costly maintenance events, aircraft downtime, supply chain disruptions, and safety concerns.
+
+This project leverages the NASA CMAPSS Turbofan Engine Dataset to develop an end-to-end predictive maintenance solution capable of forecasting engine degradation, estimating Remaining Useful Life (RUL), identifying high-risk assets, and optimizing inventory decisions through a modern cloud-based analytics architecture.
+
+The solution integrates:
+
+- Python & Jupyter Notebooks
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Machine Learning (XGBoost)
+- Explainable AI (SHAP)
+- Snowflake Data Warehouse
+- Power BI Executive Reporting
+
+---
+
+# 🎯 Business Problem
+
+Traditional maintenance approaches typically rely on fixed inspection intervals or historical averages.
+
+This often results in:
+
+- Premature component replacement
+- Unexpected equipment failures
+- Excess spare-parts inventory
+- Aircraft-On-Ground (AOG) events
+- Increased maintenance costs
+
+This project introduces a predictive maintenance framework that enables organizations to:
+
+✅ Predict engine failures before they occur
+
+✅ Estimate Remaining Useful Life (RUL)
+
+✅ Identify critical maintenance actions
+
+✅ Optimize inventory allocation
+
+✅ Improve fleet reliability
+
+✅ Reduce operational disruptions
+
+---
+
+# 🏗️ Solution Architecture
+
+```text
+NASA CMAPSS Dataset
+          │
+          ▼
+Exploratory Data Analysis
+          │
+          ▼
+Feature Engineering
+          │
+          ▼
+Machine Learning (XGBoost)
+          │
+          ▼
+Model Explainability (SHAP)
+          │
+          ▼
+Snowflake Data Warehouse
+(Bronze → Silver → Gold)
+          │
+          ▼
+Power BI Command Center
+```
+
+---
+
+# 📊 Exploratory Data Analysis
+
+The first stage focused on understanding degradation patterns and identifying how engine behavior changes as failure approaches.
+
+Understanding these trends helps establish maintenance thresholds and supports predictive maintenance decision-making.
+
+---
+
+## Engine Lifespan Distribution
+
+The histogram below shows the distribution of total engine lifecycles before failure.
+
 ![Distribution of Engine Lifespan](image2.png)
 
-An End-to-End Enterprise Solution leveraging Machine Learning, Cloud Data Warehousing, and Executive Business Intelligence.
-.
+### Key Insights
 
-🚀 Project Architecture Overview
-This project delivers a complete enterprise analytical framework designed to minimize unscheduled aircraft downtime and maximize inventory efficiency. By transforming high-dimensional time-series sensor data from turbofan engines into clean, business-ready data structures, this framework provides automated procurement actions linked to real-time risk profiles.
-🎛️ Executive Command Center
-The system culminates in a live business dashboard that mirrors production status, unifying operational maintenance requirements with automated supply chain workflows.
+- Mean engine lifespan is approximately **206 cycles**
+- Engine failures follow a roughly normal distribution
+- Significant lifecycle variability exists across engines
+- Fixed maintenance intervals may not be optimal for all assets
 
-📊 Phase 1: Exploratory Data Analysis & Lifespan Analytics
-To understand the mechanics of engine degradation, a deep exploration of engine failure thresholds was performed. The data evaluates multiple engines running sequentially until system failure occurs.
+---
 
-🕒 Distribution of Total Life Cycles
-Statistical profiling of the overall operational threshold reveals that engine breakdown behaves symmetrically around a distinct mean lifespan. This provides baseline physics indicating when predictive alerts should intensify.
+## Extreme Engine Lifespans
 
-Mean Lifespan: The historical baseline shows systems naturally reach failure around 206 operational cycles.
+To understand best-case and worst-case operational scenarios, the longest and shortest-performing engines were analyzed.
 
-Operational Variance: The continuous curve indicates the probability distribution, warning managers against basic scheduled maintenance strategies due to premature engine failure risks.
+![Extreme Lifespans](Image1.png)
 
-📉 Extreme Lifespan Disparities
-Understanding anomalous engine behaviors helps isolate outer operational bounds, allowing safety analysts to determine worst-case fleet scenarios.
+### Key Insights
 
-🛠️ Phase 2: Feature Engineering & Sensor Drift MechanicsA core technical challenge is selecting features that drift predictably as systems degrade, discarding dead channels with constant values or low variance that introduce computational noise.🌡️ Target Correlation EngineeringRemaining Useful Life (RUL) represents the dependent target variable generated for the machine learning model, mathematically formulated as:$$\text{RUL}_t = t_{\text{failure}} - t_{\text{current}}$$Correlation mapping reveals which physical metrics move linearly with progressive machine wear.
+- Some engines exceeded **360 cycles**
+- Others failed near **130 cycles**
+- Lifecycle variation highlights the need for predictive maintenance rather than fixed scheduling
+- High-performing and low-performing engines provide valuable degradation benchmarks
 
-📈 Healthy vs. Failing State Separability
-Top-performing prognostic sensors display distinct probability distribution shifts between initial healthy runs (green) and late-stage operating states (red).
+---
 
-Signal Shifting: Active sensors like T50 and Ps30 display strong monotonic drift, providing distinct non-overlapping indicators as failure nears.
+# ⚙️ Feature Engineering & Sensor Intelligence
 
-Symmetry Breakdown: Distorted distributions highlight accelerated physical degradation in the final 30 cycles of operation.
+Predictive maintenance depends heavily on identifying sensor variables that consistently change as engines degrade.
 
-🤖 Phase 3: Advanced Modeling & Interpretability Pipeline
-To resolve high-dimensional multi-sensor interactions, an XGBoost Regressor algorithm was trained on engineered degradation features.
+Sensor trends were examined to isolate the most informative variables and eliminate low-value noise.
 
-🗺️ PCA Projection: Engine Degradation Trajectory
-Principal Component Analysis (PCA) maps the high-dimensional sensor readings down to an optimal 2D coordinate space, illustrating the system's irreversible flight path from peak health to failure.
+---
 
-🔍 Explainable AI (XAI) via SHAP Interaction Values
-To make the black-box ensemble model acceptable to engineering and safety directors, SHAP (SHapley Additive exPlanations) values decompose the unique interaction effects driving real-time prediction curves.
+## Sensor Correlation with Remaining Useful Life
 
-Engineering Insight: Decomposing overlapping sensor attributes via SHAP values isolates conditional dependencies (such as temperature spikes vs. pressure drops), ensuring explainable threshold constraints across all prediction outputs.
+The heatmap below identifies sensors with the strongest relationship to Remaining Useful Life (RUL).
 
-❄️ Phase 4: Snowflake Data Warehouse Architecture
-The core data processing layer utilizes a automated cloud infrastructure built entirely inside Snowflake to guarantee secure, production-grade scalability.
+image4.png
 
-🏗️ Medallion Architecture Setup
-Data transitions cleanly through independent structural schemas:
+### Key Insights
 
-Bronze Layer (bronze_raw): Raw time-series ingestion tables preserving immutable history.
+Strong predictors include:
 
-Silver Layer (silver_clean): Cleaned, filtered data structures with outliers eliminated.
+- Ps30
+- T50
+- Time Cycles
+- BPR
+- htBleed
+- T24
+- Nf
+- NRf
 
-Gold Layer (gold_business): Production-ready fact tables (FACT_INVENTORY, FACT_PREDICTIONS, FACT_DEMAND) feeding optimized business objects.
+These variables demonstrated the strongest relationships with engine degradation and became critical inputs to the machine learning model.
 
-🛡️ Administrative Governance & Financial Optimization
-The script applies robust system management principles to eliminate compute waste and restrict unauthorized view access:
+---
 
-Resource Monitors: Enforces a dedicated 5-credit maximum threshold to suspend rogue computing costs instantly.
+## Healthy vs Failing Engine States
 
-Role-Based Access Control (RBAC): Restricts data read and write privileges via isolated professional definitions (nfi_data_scientist, nfi_supply_chain_analyst).
+Understanding how sensor values shift between healthy and failing states is essential for predictive maintenance.
 
-Materialized Optimization Views: Implements optimized relational schemas (VW_EXECUTIVE_SUMMARY, VW_RECOMMENDATIONS) allowing rapid DirectQuery data updates inside Power BI without executing expensive dataset refreshes.
-📈 Key Portfolio Outcomes & Business Value
-Zero-Downtime Logistics: Bridges data engineering with operations, flagging parts requiring immediate attention before critical failures cause unexpected AOG (Aircraft on Ground) events.
+image5.png
 
-Intelligent Supply Chain Syncing: Evaluates supplier lead times alongside real-time failure risk to automate optimal reorder quantities, preventing cost-intensive overstocking.
+### Key Insights
 
-Governance First: Proves proficiency in writing real-world, enterprise-ready SQL code incorporating automated safety controls, security definitions, and optimized view execution layers.
+As engine failure approaches:
+
+- Temperature variables drift significantly
+- Pressure measurements shift consistently
+- Distribution overlap decreases
+- Healthy and failing states become increasingly distinguishable
+
+These patterns provide strong predictive signals for machine learning algorithms.
+
+---
+
+# 🤖 Machine Learning Model
+
+An XGBoost Regression model was developed to estimate Remaining Useful Life (RUL) using engineered sensor features.
+
+---
+
+## Remaining Useful Life Formula
+
+```text
+RUL = Failure Cycle - Current Cycle
+```
+
+The model continuously estimates how many operating cycles remain before engine failure occurs.
+
+---
+
+## PCA Analysis: Engine Degradation Trajectory
+
+To visualize degradation patterns across many sensors, Principal Component Analysis (PCA) was applied.
+
+image6.png
+
+### Key Insights
+
+- PCA captures approximately **65% of the sensor information**
+- Healthy engines cluster in high-RUL regions
+- Degraded engines move toward low-RUL regions
+- Clear degradation pathways emerge before failure
+
+The PCA visualization demonstrates how engines transition through measurable health states throughout their lifecycle.
+
+---
+
+# 🔍 Explainable AI (SHAP)
+
+Machine learning predictions must be understandable by engineering and maintenance teams.
+
+To improve transparency, SHAP (SHapley Additive Explanations) was used to interpret model behavior.
+
+---
+
+## SHAP Interaction Analysis
+
+The interaction matrix below illustrates how critical sensors influence one another during prediction generation.
+
+image7.png
+
+### Key Insights
+
+- Ps30 and T50 display significant interaction effects
+- Sensor relationships contribute jointly to degradation predictions
+- Interactions reveal deeper patterns than isolated feature importance
+- Helps engineers understand complex failure mechanisms
+
+---
+
+## SHAP Feature Relationships
+
+The visualization below highlights the combined influence of critical variables within the predictive model.
+
+image8.png
+
+### Key Insights
+
+- Sensor interactions are highly nonlinear
+- Important predictors reinforce one another
+- Failure predictions are driven by combinations of sensor behaviors
+- Explainability increases confidence in maintenance decisions
+
+---
+
+# ❄️ Snowflake Data Warehouse
+
+A Medallion Architecture was implemented within Snowflake to support scalable, governed analytics.
+
+---
+
+## Bronze Layer
+
+```text
+bronze_raw
+```
+
+Stores raw sensor and operational data.
+
+### Purpose
+
+- Historical preservation
+- Raw ingestion
+- Auditability
+
+---
+
+## Silver Layer
+
+```text
+silver_clean
+```
+
+Stores cleaned and transformed datasets.
+
+### Purpose
+
+- Data quality improvements
+- Feature preparation
+- Standardization
+
+---
+
+## Gold Layer
+
+```text
+gold_business
+```
+
+Contains business-ready structures supporting executive reporting.
+
+### Fact Tables
+
+- FACT_PREDICTIONS
+- FACT_INVENTORY
+- FACT_DEMAND
+
+### Dimension Tables
+
+- DIM_PART
+- DIM_VEHICLE
+- DIM_WAREHOUSE
+
+### Business Views
+
+- VW_EXECUTIVE_SUMMARY
+- VW_RECOMMENDATIONS
+
+---
+
+## Governance & Cost Optimization
+
+Enterprise-grade governance controls were implemented in Snowflake.
+
+### Resource Monitoring
+
+```text
+5-Credit Resource Monitor
+```
+
+Prevents uncontrolled warehouse spending.
+
+### Role-Based Access Control (RBAC)
+
+Roles include:
+
+```text
+nfi_data_scientist
+nfi_supply_chain_analyst
+```
+
+### Dedicated Compute Resources
+
+```text
+NFI_COMPUTE_WH
+```
+
+### Power BI DirectQuery Optimization
+
+Optimized reporting views enable efficient dashboard refreshes while minimizing compute costs.
+
+---
+
+# 📊 Aerospace Predictive Maintenance Command Center
+
+The final deliverable is an executive dashboard designed to connect maintenance planning, fleet health, and supply chain optimization into a single decision-support platform.
+
+image3.png
+
+---
+
+## Executive Dashboard Features
+
+### Fleet Monitoring
+
+- Total Vehicles
+- Fleet Health Score
+- Average Remaining Useful Life
+- Healthy Fleet Percentage
+
+### Failure Prediction
+
+- 30-Day Failure Risk
+- Fleet Health Distribution
+- Failure Risk Monitoring
+
+### Maintenance Planning
+
+- Maintenance Action Breakdown
+- Immediate Replacement Requirements
+- Monitoring Recommendations
+
+### Supply Chain Optimization
+
+- Inventory Investment Analysis
+- Component-Level Inventory Value
+- Reorder Planning Support
+
+---
+
+# 📈 Business Value Delivered
+
+## Predictive Maintenance
+
+Predicts future failures before operational disruption occurs.
+
+## Inventory Optimization
+
+Aligns parts inventory with forecasted maintenance requirements.
+
+## Operational Reliability
+
+Improves fleet readiness through proactive maintenance scheduling.
+
+## Executive Visibility
+
+Provides leadership with a real-time view of fleet risk, inventory investment, and maintenance demand.
+
+## Cost Control
+
+Reduces unnecessary inventory investments while minimizing stockout risk.
+
+---
+
+# 🛠️ Technology Stack
+
+## Data Engineering
+
+- Snowflake
+- SQL
+- Medallion Architecture
+- RBAC Security
+
+## Data Science
+
+- Python
+- Pandas
+- NumPy
+- Scikit-Learn
+- XGBoost
+- SHAP
+
+## Business Intelligence
+
+- Power BI
+- DAX
+- DirectQuery
+
+## Development Tools
+
+- Jupyter Notebook
+- Anaconda
+- GitHub
+
+---
+
+# 🚀 Future Enhancements
+
+- Real-Time Sensor Streaming
+- Azure Data Factory Integration
+- Snowpark ML Deployment
+- MLOps Monitoring Framework
+- Predictive Procurement Automation
+- Digital Twin Simulation
+- Automated Alerting Workflows
+
+---
+
+# 👨‍💻 Author
+
+**Solomon Mensah**
+
+Data Analytics | Business Intelligence | Snowflake | Power BI | Machine Learning
+
+📍 Winnipeg, Manitoba, Canada
+
+---
+
+### ⭐ If you found this project useful, please consider starring this repository.
