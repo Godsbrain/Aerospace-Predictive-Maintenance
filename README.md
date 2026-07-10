@@ -91,7 +91,7 @@ Understanding these trends helps establish maintenance thresholds and supports p
 
 The histogram below shows the distribution of total engine lifecycles before failure.
 
-images/engine_lifespan_distribution.png
+![Extreme Lifespans](images/extreme_engine_lifespans.png)
 
 ### Key Insights
 
