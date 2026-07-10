@@ -1,5 +1,6 @@
 # ✈️ Aerospace Predictive Maintenance & Supply Chain Optimizer
-images/dashboard_overview.png
+![Extreme Lifespans](images/extreme_engine_lifespans.png)
+
 
 ### End-to-End Predictive Maintenance, Failure Forecasting, and Supply Chain Optimization Platform
 
