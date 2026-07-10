@@ -1,4 +1,5 @@
 # ✈️ Aerospace Predictive Maintenance & Supply Chain Optimizer
+images/dashboard_overview.png
 
 ### End-to-End Predictive Maintenance, Failure Forecasting, and Supply Chain Optimization Platform
 
@@ -53,8 +54,7 @@ This project introduces a predictive maintenance framework that enables organiza
 ---
 
 # 🏗️ Solution Architecture
-
-text
+```text
 NASA CMAPSS Dataset
           │
           ▼
@@ -75,6 +75,7 @@ Snowflake Data Warehouse
           │
           ▼
 Power BI Command Center
+```
 
 
 ---
