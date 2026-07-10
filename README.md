@@ -91,7 +91,7 @@ Understanding these trends helps establish maintenance thresholds and supports p
 
 The histogram below shows the distribution of total engine lifecycles before failure.
 
-![Distribution of Engine Lifespan](image2.png)
+images/engine_lifespan_distribution.png
 
 ### Key Insights
 
@@ -106,7 +106,7 @@ The histogram below shows the distribution of total engine lifecycles before fai
 
 To understand best-case and worst-case operational scenarios, the longest and shortest-performing engines were analyzed.
 
-![Extreme Lifespans](Image1.png)
+extreme_engine_lifespans.png
 
 ### Key Insights
 
@@ -128,7 +128,7 @@ Sensor trends were examined to isolate the most informative variables and elimin
 ## Sensor Correlation with Remaining Useful Life
 
 The heatmap below identifies sensors with the strongest relationship to Remaining Useful Life (RUL).
-image4.png
+sensor_correlation_heatmap.png
 
 ### Key Insights
 
@@ -151,7 +151,7 @@ These variables demonstrated the strongest relationships with engine degradation
 
 Understanding how sensor values shift between healthy and failing states is essential for predictive maintenance.
 
-image5.png
+healthy_vs_failing_engines.png
 
 ### Key Insights
 
@@ -186,7 +186,7 @@ The model continuously estimates how many operating cycles remain before engine 
 
 To visualize degradation patterns across many sensors, Principal Component Analysis (PCA) was applied.
 
-image6.png
+pca_degradation_analysis.png
 
 ### Key Insights
 
@@ -211,7 +211,7 @@ To improve transparency, SHAP (SHapley Additive Explanations) was used to interp
 
 The interaction matrix below illustrates how critical sensors influence one another during prediction generation.
 
-image7.png
+shap_interaction_analysis.png
 
 ### Key Insights
 
@@ -226,7 +226,7 @@ image7.png
 
 The visualization below highlights the combined influence of critical variables within the predictive model.
 
-image8.png
+shap_feature_relationships.png
 
 ### Key Insights
 
