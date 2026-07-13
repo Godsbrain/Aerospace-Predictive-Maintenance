@@ -130,7 +130,8 @@ Sensor trends were examined to isolate the most informative variables and elimin
 ## Sensor Correlation with Remaining Useful Life
 
 The heatmap below identifies sensors with the strongest relationship to Remaining Useful Life (RUL).
-sensor_correlation_heatmap.png
+<h3>Sensor Correlation Heatmap</h3>
+<img src="https://raw.githubusercontent.com/Godsbrain/Aerospace-Predictive-Maintenance/main/images/sensor_correlation_heatmap.png" alt="Sensor Correlation Heatmap" width="600">
 
 ### Key Insights
 
