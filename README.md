@@ -1,6 +1,4 @@
 # ✈️ Aerospace Predictive Maintenance & Supply Chain Optimizer
-![Extreme Lifespans](images/extreme_engine_lifespans.png)
-
 
 ### End-to-End Predictive Maintenance, Failure Forecasting, and Supply Chain Optimization Platform
 
@@ -189,9 +187,8 @@ The model continuously estimates how many operating cycles remain before engine 
 ## PCA Analysis: Engine Degradation Trajectory
 
 To visualize degradation patterns across many sensors, Principal Component Analysis (PCA) was applied.
-
-pca_degradation_analysis.png
-
+<h3>PCA Analysis: Engine Degradation Trajectory</h3>
+<img src="https://raw.githubusercontent.com/Godsbrain/Aerospace-Predictive-Maintenance/main/images/pca_degradation_analysis.png" alt="PCA Analysis: Engine Degradation Trajectory" width="600">
 ### Key Insights
 
 - PCA captures approximately **65% of the sensor information**
