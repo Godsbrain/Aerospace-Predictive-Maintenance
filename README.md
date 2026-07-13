@@ -212,7 +212,8 @@ To improve transparency, SHAP (SHapley Additive Explanations) was used to interp
 
 The interaction matrix below illustrates how critical sensors influence one another during prediction generation.
 
-https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/shap_interaction_analysis.png
+<h3>SHAP Interaction Analysis</h3>
+<img src="https://raw.githubusercontent.com/Godsbrain/Aerospace-Predictive-Maintenance/main/images/shap_interaction_analysis.png" alt="SHAP Interaction Analysis" width="600">
 
 ### Key Insights
 
