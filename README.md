@@ -227,8 +227,8 @@ The interaction matrix below illustrates how critical sensors influence one anot
 ## SHAP Feature Relationships
 
 The visualization below highlights the combined influence of critical variables within the predictive model.
-
-https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/shap_feature_relationships.png
+<h3>SHAP Feature Relationships</h3>
+<img src="https://raw.githubusercontent.com/Godsbrain/Aerospace-Predictive-Maintenance/main/images/shap_feature_relationships.png" alt="SHAP Feature Relationships" width="600">
 
 ### Key Insights
 
