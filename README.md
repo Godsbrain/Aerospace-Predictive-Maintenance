@@ -213,7 +213,7 @@ To improve transparency, SHAP (SHapley Additive Explanations) was used to interp
 
 The interaction matrix below illustrates how critical sensors influence one another during prediction generation.
 
-shap_interaction_analysis.png
+https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/shap_interaction_analysis.png
 
 ### Key Insights
 
@@ -228,7 +228,7 @@ shap_interaction_analysis.png
 
 The visualization below highlights the combined influence of critical variables within the predictive model.
 
-shap_feature_relationships.png
+https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/shap_feature_relationships.png
 
 ### Key Insights
 
@@ -341,7 +341,7 @@ Optimized reporting views enable efficient dashboard refreshes while minimizing 
 
 The final deliverable is an executive dashboard designed to connect maintenance planning, fleet health, and supply chain optimization into a single decision-support platform.
 
-image3.png
+https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/image3.png
 
 ---
 
