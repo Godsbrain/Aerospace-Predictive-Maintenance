@@ -92,8 +92,7 @@ Understanding these trends helps establish maintenance thresholds and supports p
 ## Engine Lifespan Distribution
 
 The histogram below shows the distribution of total engine lifecycles before failure.
-
-![Extreme Lifespans](images/extreme_engine_lifespans.png)
+<img src="https://raw.githubusercontent.com/Godsbrain/Aerospace-Predictive-Maintenance/main/images/extreme_engine_lifespans.png" alt="Extreme Lifespans" width="600">
 
 ### Key Insights
 
