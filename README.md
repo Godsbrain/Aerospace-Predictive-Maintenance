@@ -154,7 +154,8 @@ These variables demonstrated the strongest relationships with engine degradation
 
 Understanding how sensor values shift between healthy and failing states is essential for predictive maintenance.
 
-healthy_vs_failing_engines.png
+<h3>Healthy vs Failing Engine States</h3>
+<img src="https://raw.githubusercontent.com/Godsbrain/Aerospace-Predictive-Maintenance/main/images/healthy_vs_failing_engines.png" alt="Healthy vs Failing Engine States" width="600">
 
 ### Key Insights
 
