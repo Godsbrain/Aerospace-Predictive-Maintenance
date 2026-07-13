@@ -106,7 +106,7 @@ The histogram below shows the distribution of total engine lifecycles before fai
 
 To understand best-case and worst-case operational scenarios, the longest and shortest-performing engines were analyzed.
 
-![Extreme Lifespans](https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/extreme_engine_lifespans.png)
+
 
 ### Key Insights
 
@@ -341,7 +341,7 @@ Optimized reporting views enable efficient dashboard refreshes while minimizing 
 
 The final deliverable is an executive dashboard designed to connect maintenance planning, fleet health, and supply chain optimization into a single decision-support platform.
 
-https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/image3.png
+![Extreme Lifespans](https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/extreme_engine_lifespans.png)
 
 ---
 
