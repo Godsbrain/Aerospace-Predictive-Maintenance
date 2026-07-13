@@ -108,7 +108,7 @@ The histogram below shows the distribution of total engine lifecycles before fai
 
 To understand best-case and worst-case operational scenarios, the longest and shortest-performing engines were analyzed.
 
-extreme_engine_lifespans.png
+![Extreme Lifespans](https://github.com/Godsbrain/Aerospace-Predictive-Maintenance/raw/main/images/extreme_engine_lifespans.png)
 
 ### Key Insights
 
